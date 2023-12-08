@@ -14,48 +14,266 @@
 
     <title>Frontend Mentor | E-commerce product page</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <!--css file-->
+    <link rel="stylesheet" href="main.css" />
+
+    <!--javascript file-->
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <header>
+    <!--header-->
+    <header class="header">
+      <!--mobile menu-->
+      <img src="./images/icon-menu.svg" alt="mobile menu" class="menu-bar" />
+
+      <!--logo-->
+      <img src="./images/logo.svg" alt="logo" class="logo" />
+
+      <!--navbar-->
       <nav class="navbar">
-        <ul class="navbar__list">
-          <li class="navbar__list-item">Collections</li>
-          <li class="navbar__list-item">Men</li>
-          <li class="navbar__list-item">Women</li>
-          <li class="navbar__list-item">About</li>
-          <li class="navbar__list-item">Contact</li>
+        <!--navbar list-->
+        <ul class="navbar__list move-to-the-left">
+          <!--navbar list warpper-->
+          <div class="navbar__list-wrapper">
+            <!--close navbar-->
+            <img
+              src="./images/icon-close.svg"
+              alt="close navbar"
+              class="navbar__close-btn"
+            />
 
-          <!--cart-->
-          <li class="navbar__list-item">
-            <img src="./images/icon-cart.svg" alt="shopping cart" />
-          </li>
-          <!--profile-->
-          <li class="navbar__list-item">
-            <img src="./images/image-avatar.png" alt="profile image" />
-          </li>
+            <li class="navbar__list-item">
+              <a href="#">Collections</a>
+            </li>
+
+            <li class="navbar__list-item">
+              <a href="#"> Men</a>
+            </li>
+
+            <li class="navbar__list-item">
+              <a href="#"> Women</a>
+            </li>
+
+            <li class="navbar__list-item">
+              <a href="#"> About </a>
+            </li>
+
+            <li class="navbar__list-item">
+              <a href="#"> Contact </a>
+            </li>
+          </div>
         </ul>
-      </nav>
-    </header>
-    Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are
-    your perfect casual wear companion. Featuring a durable rubber outer sole,
-    they’ll withstand everything the weather can offer. $125.00 50% $250.00 0
-    Add to cart
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+        <!--cart-->
+        <span class="cart-img">
+          <img src="./images/icon-cart.svg" alt="shopping cart" />
+
+          <p class="product-num hidden">0</p>
+        </span>
+
+        <!--profile-->
+        <img
+          src="./images/image-avatar.png"
+          class="profile-img"
+          alt="profile image"
+        />
+      </nav>
+
+      <div class="cart-info hidden">
+        <h3 class="cart-title">Cart</h3>
+
+        <div class="cart-info-description">
+          <p class="empty-cart-image">Your cart is empty</p>
+        </div>
+      </div>
+    </header>
+
+    <!--main-->
+    <main class="product">
+      <!--product gallery-->
+      <div class="product__gallery">
+        <ul class="product__image-lists">
+          <li class="product__list-image products">
+            <img
+              src="./images/image-product-1.jpg"
+              alt="product image"
+              class="product__image"
+            />
+          </li>
+
+          <li class="product__list-image products">
+            <img
+              src="./images/image-product-2.jpg"
+              alt="product image"
+              class="product__image"
+            />
+          </li>
+
+          <li class="product__list-image products">
+            <img
+              src="./images/image-product-3.jpg"
+              alt="product image"
+              class="product__image"
+            />
+          </li>
+
+          <li class="product__list-image products">
+            <img
+              src="./images/image-product-4.jpg"
+              alt="product image"
+              class="product__image"
+            />
+          </li>
+
+          <span class="btn-container btn-previous">
+            <!--move the image forward-->
+            <img
+              src="./images/icon-previous.svg"
+              alt="button to move to the previous product image "
+              class="btn-arrow"
+            />
+          </span>
+
+          <!--move the image backward-->
+          <span class="btn-container btn-next">
+            <img
+              src="./images/icon-next.svg"
+              alt="button to move to the next product image button"
+              class="btn-arrow"
+            />
+          </span>
+        </ul>
+
+        <!--list of thumbnail images-->
+        <ul class="list-of-thumbnail-images hidden"></ul>
+      </div>
+
+      <!--overlay-->
+      <div class="overlay hidden">
+        <div class="light-box-wrapper">
+          <!--close lightbox-->
+          <img
+            src="./images/icon-close-white.svg"
+            alt="close navbar"
+            class="close-light-box-btn"
+          />
+
+          <!--lightbox gallery-->
+          <div class="product__gallery lightbox-gallery">
+            <ul class="product__image-lists lightbox-gallery__image-lists">
+              <li class="product__list-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-1.jpg"
+                  alt="product image"
+                  class="product__image"
+                />
+              </li>
+
+              <li class="product__list-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-2.jpg"
+                  alt="product image"
+                  class="product__image"
+                />
+              </li>
+
+              <li class="product__list-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-3.jpg"
+                  alt="product image"
+                  class="product__image"
+                />
+              </li>
+
+              <li class="product__list-image lightbox-gallery__product">
+                <img
+                  src="./images/image-product-4.jpg"
+                  alt="product image"
+                  class="product__image"
+                />
+              </li>
+            </ul>
+
+            <!--list of thumbnail images-->
+            <ul class="list-of-thumbnail-images hidden"></ul>
+          </div>
+
+          <span class="btn-container btn-previous">
+            <!--move the image forward-->
+            <img
+              src="./images/icon-previous.svg"
+              alt="button to move to the previous product image "
+              class="btn-arrow"
+            />
+          </span>
+
+          <!--move the image backward-->
+          <span class="btn-container btn-next">
+            <img
+              src="./images/icon-next.svg"
+              alt="button to move to the next product image button"
+              class="btn-arrow"
+            />
+          </span>
+        </div>
+      </div>
+
+      <!--product description-->
+      <div class="product__description">
+        <h1 class="company">Sneaker Company</h1>
+
+        <h2 class="sneaker-name">Fall Limited Edition Sneakers</h2>
+
+        <p class="sneaker-description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <!--product pricing"-->
+        <div class="product__pricing">
+          <p class="product__final-price">$125.00</p>
+          <p class="product__discount">50%</p>
+          <p class="product__first-price">$250.00</p>
+        </div>
+
+        <div class="wrapper">
+          <!--product quantity-->
+          <div class="product__quantity">
+            <img
+              src="./images/icon-minus.svg"
+              alt="decrease the number of product"
+              class="product__decrease-btn"
+            />
+
+            <p class="product__number">0</p>
+
+            <img
+              src="./images/icon-plus.svg"
+              alt="increase the number of product"
+              class="product__increase-btn"
+            />
+          </div>
+
+          <!--add to cart-->
+          <button class="btn add-to-cart-btn">
+            <img src="./images/icon-cart-white.svg" alt="" />
+            <p class="add-to-cart-text">Add to cart</p>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/aemrobe">Aemro Bekalu</a
+        >.
+      </div>
+    </footer>
   </body>
 </html>
