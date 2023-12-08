@@ -125,7 +125,7 @@ activateThumbnailImage(0);
 //go to the first page
 gotoPage(curImage);
 
-//clicking the arrow buttons
+//clicking the arrow buttons and changing the product images
 const changingProductImages = function (e) {
   const btnNext = e.target.closest(".btn-next");
 
@@ -143,7 +143,7 @@ productImageListContainer.forEach((container) => {
 
 lightBoxGalleryWrapper.addEventListener("click", changingProductImages);
 
-//clicking the thumbnail images
+//clicking the thumbnail images and changing the product images
 thumnailImagesContainer.forEach((container) => {
   container.addEventListener("click", function (e) {
     const thumbnailImage = e.target.closest(".thumbnail-image");
@@ -159,7 +159,7 @@ thumnailImagesContainer.forEach((container) => {
   });
 });
 
-//changing the number of product
+//changing the number of product which added to the cart
 let noOfProduct = +numberOfProductEl.textContent;
 
 decreaseProductBtn.addEventListener("click", function () {
@@ -282,7 +282,7 @@ function addEvent(eventName, callback) {
 const buttonsInsideLightBox =
   lightBoxGalleryWrapper.querySelectorAll(".btn-container");
 
-//open the lightbox
+//open the lightboxgallery
 const openingTheLightBoxGallery = function (e) {
   const clickedProductGallery = e.target.closest(".product__image-lists");
 
